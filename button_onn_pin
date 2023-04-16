@@ -1,0 +1,12 @@
+import machine
+import time
+
+button_pin = machine.Pin(15, machine.Pin.IN, machine.Pin.PULL_UP)
+
+while True:
+    button_state = button_pin.value()
+    if button_state == 0:
+        print("Button is pressed!")
+    else:
+        print("Button is not pressed.")
+    time.sleep(0.1)
